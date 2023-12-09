@@ -38,7 +38,7 @@ class _PageOneState extends State<PageOne> {
                         child: TextField(
                           controller: userController,
                           decoration: const InputDecoration(
-                            hintText: 'Search GitHub',
+                            hintText: 'Search GitHub profile',
                             hintStyle: TextStyle(color: Colors.white),
                             icon: Icon(Icons.search),
                           ),
@@ -96,7 +96,7 @@ class _PageOneState extends State<PageOne> {
                         ),
                         const Padding(padding: EdgeInsets.all(10)),
                         Text(
-                          'Biográfia: ${profile!.bio}',
+                          'Bio: ${profile!.bio}',
                           style: const TextStyle(color: Colors.white),
                         ),
                       ],
