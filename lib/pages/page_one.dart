@@ -18,9 +18,7 @@ class _PageOneState extends State<PageOne> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('devfinder', 
-          style: TextStyle(color: Colors.white)
-          ),
+          title: const Text('devfinder', style: TextStyle(color: Colors.white)),
           backgroundColor: Colors.indigo[900],
         ),
         backgroundColor: Colors.indigo[900],
@@ -38,10 +36,11 @@ class _PageOneState extends State<PageOne> {
                         width: 200,
                         child: TextField(
                           controller: userController,
-                          decoration: const InputDecoration(
+                          decoration: InputDecoration(
                             hintText: 'Search GitHub profile',
-                            hintStyle: TextStyle(color: Colors.white),
-                            icon: Icon(Icons.search),
+                            hintStyle: const TextStyle(color: Colors.white),
+                            icon: const Icon(Icons.search),
+                            iconColor: Colors.blue[700],
                           ),
                           style: const TextStyle(color: Colors.white),
                         ),
@@ -80,7 +79,12 @@ class _PageOneState extends State<PageOne> {
                             Container(
                               width: 100,
                               height: 100,
-                              child: Image.network(profile!.avatar),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(30),
+                                child: Image.network(
+                                  profile!.avatar,
+                                ),
+                              ),
                             ),
                             const Padding(padding: EdgeInsets.all(5)),
                             Text(
@@ -92,14 +96,20 @@ class _PageOneState extends State<PageOne> {
                       ),
                       if (profile != null) ...[
                         const Padding(padding: EdgeInsets.all(10)),
-                        Text(
-                          'Localização: ${profile!.location}',
-                          style: const TextStyle(color: Colors.white),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            'Bio: ${profile!.bio}',
+                            style: const TextStyle(color: Colors.white),
+                          ),
                         ),
                         const Padding(padding: EdgeInsets.all(10)),
-                        Text(
-                          'Bio: ${profile!.bio}',
-                          style: const TextStyle(color: Colors.white),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            'Localização: ${profile!.location}',
+                            style: const TextStyle(color: Colors.white),
+                          ),
                         ),
                       ],
                     ],
