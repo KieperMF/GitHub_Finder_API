@@ -48,10 +48,18 @@ class _PageOneState extends State<PageOne> {
                       const Padding(padding: EdgeInsets.all(30)),
                       Container(
                         child: ElevatedButton(
-                            onPressed: () {
-                              httpRequest();
-                            },
-                            child: const Text('Pesquisar')),
+                          onPressed: () {
+                            httpRequest();
+                          },
+                          style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                            Colors.blue,
+                          )),
+                          child: const Text(
+                            'Search',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
                       ),
                     ],
                   ),
