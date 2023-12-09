@@ -18,18 +18,19 @@ class _PageOneState extends State<PageOne> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('devfinder', style: TextStyle(color: Colors.white)),
-          backgroundColor: Colors.blueGrey[600],
+          title: const Text('devfinder', 
+          style: TextStyle(color: Colors.white)
+          ),
+          backgroundColor: Colors.indigo[900],
         ),
-        backgroundColor: Colors.blueGrey[700],
+        backgroundColor: Colors.indigo[900],
         body: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Center(
             child: Column(
               children: [
-                const Padding(padding: EdgeInsets.all(14)),
                 Container(
-                  color: Colors.blueGrey[600],
+                  color: Colors.indigo[800],
                   child: Row(
                     children: [
                       const Padding(padding: EdgeInsets.all(14)),
@@ -42,6 +43,7 @@ class _PageOneState extends State<PageOne> {
                             hintStyle: TextStyle(color: Colors.white),
                             icon: Icon(Icons.search),
                           ),
+                          style: const TextStyle(color: Colors.white),
                         ),
                       ),
                       const Padding(padding: EdgeInsets.all(30)),
@@ -59,7 +61,7 @@ class _PageOneState extends State<PageOne> {
                   height: 16,
                 ),
                 Container(
-                  color: Colors.blueGrey[600],
+                  color: Colors.indigo[800],
                   height: 500,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
