@@ -130,6 +130,30 @@ class _PageOneState extends State<PageOne> {
                           ),
                         ),
                       ],
+                      if (profile == null) ...[
+                        const Padding(padding: EdgeInsets.all(10)),
+                        Container(
+                          margin: const EdgeInsets.all(10),
+                          child: const Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              'Bio:',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
+                        ),
+                        const Padding(padding: EdgeInsets.all(5)),
+                        Container(
+                          margin:const EdgeInsets.all(10),
+                          child: const Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              'Localização:',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
+                        ),
+                      ],
                     ],
                   ),
                 ),
