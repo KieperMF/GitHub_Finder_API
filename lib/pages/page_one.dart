@@ -31,7 +31,7 @@ class _PageOneState extends State<PageOne> {
                   color: Colors.indigo[800],
                   child: Row(
                     children: [
-                      const Padding(padding: EdgeInsets.all(14)),
+                      const Padding(padding: EdgeInsets.all(10)),
                       Container(
                         width: 200,
                         child: TextField(
@@ -92,7 +92,7 @@ class _PageOneState extends State<PageOne> {
                               width: 100,
                               height: 100,
                               child: ClipRRect(
-                                borderRadius: BorderRadius.circular(30),
+                                borderRadius: BorderRadius.circular(50),
                                 child: Image.network(
                                   profile!.avatar,
                                 ),
@@ -100,7 +100,7 @@ class _PageOneState extends State<PageOne> {
                             ),
                             const Padding(padding: EdgeInsets.all(5)),
                             Text(
-                              'Nome: ${profile!.name}',
+                              'Name: ${profile!.name}',
                               style: const TextStyle(color: Colors.white),
                             ),
                           ],
@@ -120,11 +120,51 @@ class _PageOneState extends State<PageOne> {
                         ),
                         const Padding(padding: EdgeInsets.all(5)),
                         Container(
-                          margin: EdgeInsets.all(10),
+                          height: 50,
+                          width: 225,
+                          color: Colors.grey[900],
+                          margin: const EdgeInsets.all(10),
+                          child: Row(
+                            children: [
+                             Column(
+                                children: [
+                                  const Text(
+                                    "Repos",
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                  Text('${profile!.repos}', style: const TextStyle(color: Colors.white),)
+                                ],
+                              ),
+                              const Padding(padding: EdgeInsets.all(10)),
+                              Column(
+                                children: [
+                                  const Text(
+                                    "Followers",
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                  Text('${profile!.followers}', style: const TextStyle(color: Colors.white),)
+                                ],
+                              ),
+                              const Padding(padding: EdgeInsets.all(10)),
+                              Column(
+                                children: [
+                                  const Text(
+                                    "Following",
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                  Text('${profile!.following}', style: const TextStyle(color: Colors.white),)
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        const Padding(padding: EdgeInsets.all(5)),
+                        Container(
+                          margin: const EdgeInsets.all(10),
                           child: Align(
                             alignment: Alignment.centerLeft,
                             child: Text(
-                              'Localização: ${profile!.location}',
+                              'Location: ${profile!.location}',
                               style: const TextStyle(color: Colors.white),
                             ),
                           ),
@@ -144,11 +184,47 @@ class _PageOneState extends State<PageOne> {
                         ),
                         const Padding(padding: EdgeInsets.all(5)),
                         Container(
-                          margin:const EdgeInsets.all(10),
+                          height: 30,
+                          color: Colors.black54,
+                          margin: const EdgeInsets.all(10),
+                          child: const Row(
+                            children: [
+                              Column(
+                                children: [
+                                  Text(
+                                    "Repos",
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                ],
+                              ),
+                              Padding(padding: EdgeInsets.all(10)),
+                              Column(
+                                children: [
+                                  Text(
+                                    "Followers",
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                ],
+                              ),
+                              Padding(padding: EdgeInsets.all(10)),
+                              Column(
+                                children: [
+                                  Text(
+                                    "Following",
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        const Padding(padding: EdgeInsets.all(5)),
+                        Container(
+                          margin: const EdgeInsets.all(10),
                           child: const Align(
                             alignment: Alignment.centerLeft,
                             child: Text(
-                              'Localização:',
+                              'Location:',
                               style: TextStyle(color: Colors.white),
                             ),
                           ),
