@@ -68,7 +68,11 @@ class _PageOneState extends State<PageOne> {
                   height: 16,
                 ),
                 Container(
-                  color: Colors.indigo[800],
+                  margin: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Colors.indigo[800],
+                  ),
                   height: 500,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -76,7 +80,7 @@ class _PageOneState extends State<PageOne> {
                       const Padding(padding: EdgeInsets.all(10)),
                       Row(
                         children: [
-                          const Padding(padding: EdgeInsets.all(16)),
+                          const Padding(padding: EdgeInsets.all(10)),
                           if (profile == null) ...[
                             const Icon(
                               Icons.account_box,
@@ -104,19 +108,25 @@ class _PageOneState extends State<PageOne> {
                       ),
                       if (profile != null) ...[
                         const Padding(padding: EdgeInsets.all(10)),
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            'Bio: ${profile!.bio}',
-                            style: const TextStyle(color: Colors.white),
+                        Container(
+                          margin: EdgeInsets.all(10),
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              'Bio: ${profile!.bio}',
+                              style: const TextStyle(color: Colors.white),
+                            ),
                           ),
                         ),
-                        const Padding(padding: EdgeInsets.all(10)),
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            'Localização: ${profile!.location}',
-                            style: const TextStyle(color: Colors.white),
+                        const Padding(padding: EdgeInsets.all(5)),
+                        Container(
+                          margin: EdgeInsets.all(10),
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              'Localização: ${profile!.location}',
+                              style: const TextStyle(color: Colors.white),
+                            ),
                           ),
                         ),
                       ],
