@@ -4,7 +4,6 @@ import 'package:github_api/models/profile.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 
-
 class PageOne extends StatefulWidget {
   const PageOne({super.key});
 
@@ -53,9 +52,6 @@ class _PageOneState extends State<PageOne> {
                         child: ElevatedButton(
                           onPressed: () {
                             httpRequest();
-                            //String? date = profile!.date;
-                            DateTime joined = DateTime.parse(profile!.date);
-                            formattedDate = DateFormat('dd/MM/yyyy').format(joined);
                           },
                           style: ButtonStyle(
                               backgroundColor: MaterialStateProperty.all<Color>(
@@ -91,7 +87,19 @@ class _PageOneState extends State<PageOne> {
                             const Icon(
                               Icons.account_box,
                               size: 100,
-                            )
+                            ),
+                            const Column(
+                              children: [
+                                Text(
+                                  'Name: ',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                Text(
+                                  'Joined: ',
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                              ],
+                            ),
                           ],
                           if (profile != null) ...[
                             SizedBox(
@@ -117,7 +125,7 @@ class _PageOneState extends State<PageOne> {
                               ],
                             ),
                             const Padding(padding: EdgeInsets.all(5)),
-                           /* Text(
+                            /* Text(
                               'Name: ${profile!.name}',
                               style: const TextStyle(color: Colors.white),
                             ),
@@ -142,49 +150,61 @@ class _PageOneState extends State<PageOne> {
                         ),
                         const Padding(padding: EdgeInsets.all(5)),
                         Container(
-                          height: 45,
-                          width: 215,
-                          color: Colors.grey[900],
+                          height: 50,
+                          width: 270,
                           margin: const EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.grey[900],
+                          ),
                           child: Row(
                             children: [
-                              Column(
-                                children: [
-                                  const Text(
-                                    "Repos",
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                  Text(
-                                    '${profile!.repos}',
-                                    style: const TextStyle(color: Colors.white),
-                                  )
-                                ],
+                              Expanded(
+                                child: Column(
+                                  children: [
+                                    const Text(
+                                      "Repos",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    Text(
+                                      '${profile!.repos}',
+                                      style:
+                                          const TextStyle(color: Colors.white),
+                                    )
+                                  ],
+                                ),
                               ),
                               const Padding(padding: EdgeInsets.all(10)),
-                              Column(
-                                children: [
-                                  const Text(
-                                    "Followers",
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                  Text(
-                                    '${profile!.followers}',
-                                    style: const TextStyle(color: Colors.white),
-                                  )
-                                ],
+                              Expanded(
+                                child: Column(
+                                  children: [
+                                    const Text(
+                                      "Followers",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    Text(
+                                      '${profile!.followers}',
+                                      style:
+                                          const TextStyle(color: Colors.white),
+                                    )
+                                  ],
+                                ),
                               ),
                               const Padding(padding: EdgeInsets.all(10)),
-                              Column(
-                                children: [
-                                  const Text(
-                                    "Following",
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                  Text(
-                                    '${profile!.following}',
-                                    style: const TextStyle(color: Colors.white),
-                                  )
-                                ],
+                              Expanded(
+                                child: Column(
+                                  children: [
+                                    const Text(
+                                      "Following",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                    Text(
+                                      '${profile!.following}',
+                                      style:
+                                          const TextStyle(color: Colors.white),
+                                    )
+                                  ],
+                                ),
                               ),
                             ],
                           ),
@@ -215,37 +235,46 @@ class _PageOneState extends State<PageOne> {
                         ),
                         const Padding(padding: EdgeInsets.all(5)),
                         Container(
-                          height: 30,
-                          width: 215,
-                          color: Colors.grey[900],
+                          height: 50,
+                          width: 270,
                           margin: const EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.grey[900],
+                          ),
                           child: const Row(
                             children: [
-                              Column(
-                                children: [
-                                  Text(
-                                    "Repos",
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                ],
+                              Expanded(
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      "Repos",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ],
+                                ),
                               ),
                               Padding(padding: EdgeInsets.all(10)),
-                              Column(
-                                children: [
-                                  Text(
-                                    "Followers",
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                ],
+                              Expanded(
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      "Followers",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ],
+                                ),
                               ),
                               Padding(padding: EdgeInsets.all(10)),
-                              Column(
-                                children: [
-                                  Text(
-                                    "Following",
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                ],
+                              Expanded(
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      "Following",
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ],
                           ),
@@ -282,6 +311,8 @@ class _PageOneState extends State<PageOne> {
       ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Erro ao carregar informações')));
     }
+    DateTime joined = DateTime.parse(profile!.date);
+    formattedDate = DateFormat('dd/MM/yyyy').format(joined);
     setState(() {});
   }
 }
