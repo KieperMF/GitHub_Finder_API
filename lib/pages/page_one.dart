@@ -2,6 +2,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:github_api/models/profile.dart';
 import 'package:http/http.dart' as http;
+import 'package:intl/intl.dart';
+
 
 class PageOne extends StatefulWidget {
   const PageOne({super.key});
@@ -13,6 +15,7 @@ class PageOne extends StatefulWidget {
 class _PageOneState extends State<PageOne> {
   TextEditingController userController = TextEditingController();
   Profile? profile;
+  String? formattedDate;
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +53,9 @@ class _PageOneState extends State<PageOne> {
                         child: ElevatedButton(
                           onPressed: () {
                             httpRequest();
+                            //String? date = profile!.date;
+                            DateTime joined = DateTime.parse(profile!.date);
+                            formattedDate = DateFormat('dd/MM/yyyy').format(joined);
                           },
                           style: ButtonStyle(
                               backgroundColor: MaterialStateProperty.all<Color>(
@@ -98,11 +104,27 @@ class _PageOneState extends State<PageOne> {
                                 ),
                               ),
                             ),
+                            Column(
+                              children: [
+                                Text(
+                                  'Name: ${profile!.name}',
+                                  style: const TextStyle(color: Colors.white),
+                                ),
+                                Text(
+                                  'Joined: ${formattedDate}',
+                                  style: const TextStyle(color: Colors.white),
+                                ),
+                              ],
+                            ),
                             const Padding(padding: EdgeInsets.all(5)),
-                            Text(
+                           /* Text(
                               'Name: ${profile!.name}',
                               style: const TextStyle(color: Colors.white),
                             ),
+                            Text(
+                              'Joined: ${joined}',
+                              style: const TextStyle(color: Colors.white),
+                            ),*/
                           ],
                         ],
                       ),
@@ -202,7 +224,7 @@ class _PageOneState extends State<PageOne> {
                               Column(
                                 children: [
                                   Text(
-                                    "Repos", 
+                                    "Repos",
                                     style: TextStyle(color: Colors.white),
                                   ),
                                 ],
