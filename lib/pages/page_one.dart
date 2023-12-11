@@ -88,7 +88,7 @@ class _PageOneState extends State<PageOne> {
                             )
                           ],
                           if (profile != null) ...[
-                            Container(
+                            SizedBox(
                               width: 100,
                               height: 100,
                               child: ClipRRect(
@@ -120,19 +120,22 @@ class _PageOneState extends State<PageOne> {
                         ),
                         const Padding(padding: EdgeInsets.all(5)),
                         Container(
-                          height: 50,
-                          width: 225,
+                          height: 45,
+                          width: 215,
                           color: Colors.grey[900],
                           margin: const EdgeInsets.all(10),
                           child: Row(
                             children: [
-                             Column(
+                              Column(
                                 children: [
                                   const Text(
                                     "Repos",
                                     style: TextStyle(color: Colors.white),
                                   ),
-                                  Text('${profile!.repos}', style: const TextStyle(color: Colors.white),)
+                                  Text(
+                                    '${profile!.repos}',
+                                    style: const TextStyle(color: Colors.white),
+                                  )
                                 ],
                               ),
                               const Padding(padding: EdgeInsets.all(10)),
@@ -142,7 +145,10 @@ class _PageOneState extends State<PageOne> {
                                     "Followers",
                                     style: TextStyle(color: Colors.white),
                                   ),
-                                  Text('${profile!.followers}', style: const TextStyle(color: Colors.white),)
+                                  Text(
+                                    '${profile!.followers}',
+                                    style: const TextStyle(color: Colors.white),
+                                  )
                                 ],
                               ),
                               const Padding(padding: EdgeInsets.all(10)),
@@ -152,7 +158,10 @@ class _PageOneState extends State<PageOne> {
                                     "Following",
                                     style: TextStyle(color: Colors.white),
                                   ),
-                                  Text('${profile!.following}', style: const TextStyle(color: Colors.white),)
+                                  Text(
+                                    '${profile!.following}',
+                                    style: const TextStyle(color: Colors.white),
+                                  )
                                 ],
                               ),
                             ],
@@ -185,7 +194,8 @@ class _PageOneState extends State<PageOne> {
                         const Padding(padding: EdgeInsets.all(5)),
                         Container(
                           height: 30,
-                          color: Colors.black54,
+                          width: 215,
+                          color: Colors.grey[900],
                           margin: const EdgeInsets.all(10),
                           child: const Row(
                             children: [
