@@ -91,13 +91,14 @@ class _PageOneState extends State<PageOne> {
                                 size: 100,
                               ),
                             ),
-                            const Padding(padding: EdgeInsets.all(10)),
+                            const Padding(padding: EdgeInsets.all(5)),
                             const Column(
                               children: [
                                 Text(
                                   'Name:',
                                   style: TextStyle(color: Colors.white),
                                 ),
+                               Padding(padding: EdgeInsets.all(5)),
                                 Text(
                                   'Joined:',
                                   style: TextStyle(color: Colors.white),
@@ -116,19 +117,32 @@ class _PageOneState extends State<PageOne> {
                                 ),
                               ),
                             ),
-                            const Padding(padding: EdgeInsets.all(10)),
-                            Column(
+                            const Padding(padding: EdgeInsets.all(5)),
+                            SizedBox(
+                              width: 150,
+                              child: Column(
                               children: [
-                                Text(
-                                  'Name: ${profile!.name}',
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                  'Name:\n ${profile!.name}',
                                   style: const TextStyle(color: Colors.white),
                                 ),
-                                Text(
-                                  'Joined: ${formattedDate}',
+                                ),
+                                
+                                const Padding(padding: EdgeInsets.all(5)),
+                                Align(
+                                  alignment: Alignment.centerLeft,
+                                  child: Text(
+                                  'Joined:\n ${formattedDate}',
                                   style: const TextStyle(color: Colors.white),
                                 ),
+                                ),
+                                
                               ],
+                            ), 
                             ),
+                            
                           ],
                         ],
                       ),
