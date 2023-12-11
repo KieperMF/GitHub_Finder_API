@@ -84,18 +84,22 @@ class _PageOneState extends State<PageOne> {
                         children: [
                           const Padding(padding: EdgeInsets.all(10)),
                           if (profile == null) ...[
-                            const Icon(
-                              Icons.account_box,
-                              size: 100,
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(50),
+                              child: const Icon(
+                                Icons.account_circle,
+                                size: 100,
+                              ),
                             ),
+                            const Padding(padding: EdgeInsets.all(10)),
                             const Column(
                               children: [
                                 Text(
-                                  'Name: ',
+                                  'Name:',
                                   style: TextStyle(color: Colors.white),
                                 ),
                                 Text(
-                                  'Joined: ',
+                                  'Joined:',
                                   style: TextStyle(color: Colors.white),
                                 ),
                               ],
@@ -112,6 +116,7 @@ class _PageOneState extends State<PageOne> {
                                 ),
                               ),
                             ),
+                            const Padding(padding: EdgeInsets.all(10)),
                             Column(
                               children: [
                                 Text(
@@ -124,15 +129,6 @@ class _PageOneState extends State<PageOne> {
                                 ),
                               ],
                             ),
-                            const Padding(padding: EdgeInsets.all(5)),
-                            /* Text(
-                              'Name: ${profile!.name}',
-                              style: const TextStyle(color: Colors.white),
-                            ),
-                            Text(
-                              'Joined: ${joined}',
-                              style: const TextStyle(color: Colors.white),
-                            ),*/
                           ],
                         ],
                       ),
@@ -151,7 +147,7 @@ class _PageOneState extends State<PageOne> {
                         const Padding(padding: EdgeInsets.all(5)),
                         Container(
                           height: 50,
-                          width: 270,
+                          width: 320,
                           margin: const EdgeInsets.all(10),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
@@ -236,7 +232,7 @@ class _PageOneState extends State<PageOne> {
                         const Padding(padding: EdgeInsets.all(5)),
                         Container(
                           height: 50,
-                          width: 270,
+                          width: 320,
                           margin: const EdgeInsets.all(10),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
