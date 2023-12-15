@@ -160,7 +160,7 @@ class _PageOneState extends State<PageOne> {
                         ),
                         const Padding(padding: EdgeInsets.all(5)),
                         Container(
-                          height: 50,
+                          height: 60,
                           width: 320,
                           margin: const EdgeInsets.all(10),
                           decoration: BoxDecoration(
